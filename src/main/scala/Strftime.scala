@@ -5,6 +5,7 @@ import java.time.LocalDateTime
 import java.time.format.TextStyle._
 import java.time.format.{DateTimeFormatter, DateTimeFormatterBuilder}
 import java.time.temporal.ChronoField._
+import java.time.temporal.TemporalAccessor
 
 
 object Strftime {
@@ -46,7 +47,7 @@ object Strftime {
 		builder.toFormatter
 	}
 
-	def format( pattern: String, moment: LocalDateTime ) = convert( pattern ).format( moment )
+	def format( pattern: String, moment: TemporalAccessor ) = convert( pattern ).format( moment )
 
 	def format( pattern: String ): String = format( pattern, LocalDateTime.now )
 
