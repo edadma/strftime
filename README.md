@@ -4,7 +4,7 @@ strftime
 [![Build Status](https://www.travis-ci.org/edadma/strftime.svg?branch=master)](https://www.travis-ci.org/edadma/strftime)
 [![Coverage Status](https://coveralls.io/repos/github/edadma/strftime/badge.svg?branch=master)](https://coveralls.io/github/edadma/strftime?branch=master)
 [![License](https://img.shields.io/badge/license-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-[![Version](https://img.shields.io/badge/latest_release-v0.1-orange.svg)](https://www.scala-sbt.org/)
+[![Version](https://img.shields.io/badge/latest_release-v0.1-orange.svg)](https://github.com/edadma/strftime/releases/tag/v0.1)
 
 *strftime* is an implementation of the [strftime](http://pubs.opengroup.org/onlinepubs/009695399/functions/strftime.html) standard C function for the [Scala](http://scala-lang.org) programming language.
 
