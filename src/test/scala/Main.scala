@@ -10,7 +10,7 @@ object Main extends App {
 
 	val builder = new DateTimeFormatterBuilder
 
-	builder.appendValue( MONTH_OF_YEAR, 2 )
+	builder.appendValue( YEAR, 2 )
 
 	val formatter = builder.toFormatter
 

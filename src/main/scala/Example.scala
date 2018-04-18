@@ -3,7 +3,7 @@ import java.time.{LocalDate, LocalDateTime}
 import xyz.hyperreal.strftime.Strftime
 
 
-object Main extends App {
+object Example extends App {
 
 	println( Strftime.format("%Y-%m-%d %H:%M") )
 	println( Strftime.format("%b %d, %y", LocalDate.parse("2016-03-14")) )

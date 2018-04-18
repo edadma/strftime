@@ -31,7 +31,12 @@ object Strftime {
 								appendText( MINUTE_OF_HOUR ).appendLiteral( ':' ).
 								appendText( SECOND_OF_MINUTE ).appendLiteral( ' ' ).
 								appendText( YEAR )
+						case 'C' => sys.error( "not implemented" )
 						case 'd' => builder.appendValue( DAY_OF_MONTH, 2 )
+						case 'D' =>
+							builder.appendValue(MONTH_OF_YEAR, 2).appendLiteral('/').
+								appendValue( DAY_OF_MONTH, 2 ).appendLiteral('/').
+								appendValueReduced( YEAR, 2, 2, 2000 )
 						case 'H' => builder.appendText( HOUR_OF_DAY )
 						case 'I' => builder.appendText( HOUR_OF_AMPM )
 						case 'm' => builder.appendValue( MONTH_OF_YEAR, 2 )
