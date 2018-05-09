@@ -8,6 +8,6 @@ import java.time.format.TextStyle._
 
 object Main extends App {
 
-  println( Strftime.format("%a, %e %b%Y-%m-%d %H:%M") )
+  println( Strftime.format("%a, %e %b %Y %T %z") )
 
 }

@@ -1,7 +1,7 @@
 //@
 package xyz.hyperreal.strftime
 
-import java.time.LocalDateTime
+import java.time.{OffsetDateTime, ZonedDateTime}
 import java.time.format.TextStyle._
 import java.time.format.{DateTimeFormatter, DateTimeFormatterBuilder}
 import java.time.temporal.ChronoField._
@@ -92,6 +92,6 @@ object Strftime {
 
 	def format( pattern: String, moment: TemporalAccessor ) = convert( pattern ).format( moment )
 
-	def format( pattern: String ): String = format( pattern, LocalDateTime.now )
+	def format( pattern: String ): String = format( pattern, OffsetDateTime.now )
 
 }
