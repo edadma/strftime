@@ -1,8 +1,8 @@
 name := "strftime"
 
-version := "0.2"
+version := "0.2.1"
 
-scalaVersion := "2.12.5"
+scalaVersion := "2.12.6"
 
 //crossScalaVersions := Seq( "2.11.11" )
 

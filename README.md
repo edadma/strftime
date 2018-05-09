@@ -4,7 +4,7 @@ strftime
 [![Build Status](https://www.travis-ci.org/edadma/strftime.svg?branch=master)](https://www.travis-ci.org/edadma/strftime)
 [![Coverage Status](https://coveralls.io/repos/github/edadma/strftime/badge.svg?branch=master)](https://coveralls.io/github/edadma/strftime?branch=master)
 [![License](https://img.shields.io/badge/license-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-[![Version](https://img.shields.io/badge/latest_release-v0.2-orange.svg)](https://github.com/edadma/strftime/releases/tag/v0.2)
+[![Version](https://img.shields.io/badge/latest_release-v0.2.1-orange.svg)](https://github.com/edadma/strftime/releases/tag/v0.2.1)
 
 *strftime* is an implementation of the [strftime](http://pubs.opengroup.org/onlinepubs/009695399/functions/strftime.html) standard C function for the [Scala](http://scala-lang.org) programming language.
 
@@ -47,14 +47,14 @@ Use the following definition to use *strftime* in your Maven project:
 	<dependency>
 	  <groupId>xyz.hyperreal</groupId>
 	  <artifactId>strftime</artifactId>
-	  <version>0.2</version>
+	  <version>0.2.1</version>
 	</dependency>
 
 Add the following to your `build.sbt` file to use *strftime* in your SBT project:
 
 	resolvers += "Hyperreal Repository" at "https://dl.bintray.com/edadma/maven"
 
-	libraryDependencies += "xyz.hyperreal" %% "strftime" % "0.2"
+	libraryDependencies += "xyz.hyperreal" %% "strftime" % "0.2.1"
 
 
 Building

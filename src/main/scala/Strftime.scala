@@ -37,7 +37,7 @@ object Strftime {
 							builder.appendValue(MONTH_OF_YEAR, 2).appendLiteral('/').
 								appendValue( DAY_OF_MONTH, 2 ).appendLiteral('/').
 								appendValueReduced( YEAR, 2, 2, 2000 )
-						case 'e' => sys.error( "not implemented" )  // todo
+						case 'e' => builder.appendValue( DAY_OF_MONTH )
 						case 'F' =>
 							builder.appendText( YEAR ).appendLiteral( '-' ).
 								appendValue( MONTH_OF_YEAR, 2 ).appendLiteral( '-' ).
