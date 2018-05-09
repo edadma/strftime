@@ -27,9 +27,9 @@ object Strftime {
 							builder.appendText( DAY_OF_WEEK, SHORT ).appendLiteral( ' ' ).
 								appendText( MONTH_OF_YEAR, SHORT ).appendLiteral( ' ' ).
 								appendValue( DAY_OF_MONTH, 2 ).appendLiteral( ' ' ).
-								appendText( HOUR_OF_DAY ).appendLiteral( ':' ).
-								appendText( MINUTE_OF_HOUR ).appendLiteral( ':' ).
-								appendText( SECOND_OF_MINUTE ).appendLiteral( ' ' ).
+								appendValue( HOUR_OF_DAY, 2 ).appendLiteral( ':' ).
+								appendValue( MINUTE_OF_HOUR, 2 ).appendLiteral( ':' ).
+								appendValue( SECOND_OF_MINUTE, 2 ).appendLiteral( ' ' ).
 								appendText( YEAR )
 						case 'C' => sys.error( "not implemented" )	// todo: don't know how to do this using java.time
 						case 'd' => builder.appendValue( DAY_OF_MONTH, 2 )
@@ -45,27 +45,27 @@ object Strftime {
 						case 'g' => sys.error( "not implemented" )	// todo
 						case 'G' => sys.error( "not implemented" )	// todo
 						case 'h' => builder.appendText( MONTH_OF_YEAR, SHORT )
-						case 'H' => builder.appendText( HOUR_OF_DAY )
-						case 'I' => builder.appendText( HOUR_OF_AMPM )
+						case 'H' => builder.appendValue( HOUR_OF_DAY, 2 )
+						case 'I' => builder.appendValue( HOUR_OF_AMPM, 2 )
 						case 'j' => builder.appendText( DAY_OF_YEAR )
 						case 'm' => builder.appendValue( MONTH_OF_YEAR, 2 )
-						case 'M' => builder.appendText( MINUTE_OF_HOUR )
+						case 'M' => builder.appendValue( MINUTE_OF_HOUR, 2 )
 						case 'n' => builder.appendLiteral( '\n' )
 						case 'p' => builder.appendText( AMPM_OF_DAY )
 						case 'r' =>
 							builder.appendText( HOUR_OF_AMPM ).appendLiteral( ':' ).
-								appendText( MINUTE_OF_HOUR ).appendLiteral( ':' ).
-								appendText( SECOND_OF_MINUTE ).appendLiteral( ' ' ).
+								appendValue( MINUTE_OF_HOUR, 2 ).appendLiteral( ':' ).
+								appendValue( SECOND_OF_MINUTE, 2 ).appendLiteral( ' ' ).
 								appendText( AMPM_OF_DAY )
 						case 'R' =>
-							builder.appendText( HOUR_OF_DAY ).appendLiteral( ':' ).
-								appendText( MINUTE_OF_HOUR )
-						case 'S' => builder.appendText( SECOND_OF_MINUTE )
+							builder.appendValue( HOUR_OF_DAY, 2 ).appendLiteral( ':' ).
+								appendValue( MINUTE_OF_HOUR, 2 )
+						case 'S' => builder.appendValue( SECOND_OF_MINUTE, 2 )
 						case 't' => builder.appendLiteral( '\t' )
 						case 'T' =>
-							builder.appendText( HOUR_OF_DAY ).appendLiteral( ':' ).
-								appendText( MINUTE_OF_HOUR ).appendLiteral( ':' ).
-								appendText( SECOND_OF_MINUTE )
+							builder.appendValue( HOUR_OF_DAY, 2 ).appendLiteral( ':' ).
+								appendValue( MINUTE_OF_HOUR, 2 ).appendLiteral( ':' ).
+								appendValue( SECOND_OF_MINUTE, 2 )
 						case 'u' => sys.error( "not implemented" )  // todo
 						case 'U' => sys.error( "not implemented" )  // todo
 						case 'V' => sys.error( "not implemented" )  // todo

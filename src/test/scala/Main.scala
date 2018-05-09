@@ -8,6 +8,6 @@ import java.time.format.TextStyle._
 
 object Main extends App {
 
-  println( Strftime.format("%a, %e %b %Y %T %z") )
+  println( Strftime.format("%a, %e %b %Y %T %z", OffsetDateTime.parse("2018-05-09T13:09:49.721-04:00")) )
 
 }
