@@ -1,7 +1,7 @@
 //@
 package xyz.hyperreal.strftime
 
-import java.time.{Instant, OffsetDateTime, ZonedDateTime}
+import java.time.{OffsetDateTime}
 import java.time.format.TextStyle._
 import java.time.format.{DateTimeFormatter, DateTimeFormatterBuilder, FormatStyle}
 import java.time.temporal.ChronoField._
@@ -10,8 +10,8 @@ import java.time.temporal.TemporalAccessor
 
 object Strftime {
 
-	def convert( pattern: String ): DateTimeFormatter = {
-		val builder = new DateTimeFormatterBuilder
+  def convert( pattern: String ): DateTimeFormatter = {
+    val builder = new DateTimeFormatterBuilder
 
     def convert( pattern: String ) {
       val it = pattern.iterator
@@ -52,24 +52,27 @@ object Strftime {
               case 'V' => builder.appendValue( ALIGNED_WEEK_OF_YEAR, 2 )
               case 'w' => sys.error( "not implemented: don't know how using java.time" )
               case 'W' => sys.error( "not implemented: don't know how using java.time" )
-              case 'x' =>	builder.appendLocalized( FormatStyle.FULL, null )
+              case 'x' => builder.appendLocalized( FormatStyle.FULL, null )
               case 'X' => builder.appendLocalized( null, FormatStyle.MEDIUM )
               case 'y' => builder.appendValueReduced( YEAR, 2, 2, 2000 )
               case 'Y' => builder.appendText( YEAR )
               case 'z' => builder.appendOffset( "+HHMM", "+0000" )
               case 'Z' => builder.appendZoneText( SHORT )
             }
+
           case c => builder.appendLiteral( c )
         }
       }
     }
 
     convert( pattern )
-		builder.toFormatter
-	}
+    builder.toFormatter
+  }
 
-	def format( pattern: String, moment: TemporalAccessor ) = convert( pattern ).format( moment )
+  def format( pattern: String, moment: TemporalAccessor ) = convert( pattern ).format( moment )
 
-	def format( pattern: String ): String = format( pattern, OffsetDateTime.now )
+  def format( pattern: String ): String = format( pattern, OffsetDateTime.now )
+
+  def parse( pattern: String, date: String ) = convert( pattern ).parse( date )
 
 }

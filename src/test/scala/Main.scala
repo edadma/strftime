@@ -8,8 +8,8 @@ import java.time.format.TextStyle._
 
 object Main extends App {
 
-  println( Strftime.format("%c",
-    ZonedDateTime.parse("2018-05-09T13:09:49.721-04:00")
-    ) )
+  val res = Strftime.parse("%c", "Wednesday, May 9, 2018 1:09:49 PM")
+
+  println( res, res.getClass )
 
 }
