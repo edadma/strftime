@@ -1,6 +1,6 @@
 package xyz.hyperreal.strftime
 
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 import org.scalatest._
 import prop.PropertyChecks
@@ -9,7 +9,8 @@ import prop.PropertyChecks
 class Tests extends FreeSpec with PropertyChecks with Matchers {
 
 	"tests" in {
-		Strftime.format( "%a, %b %d, %y at %H:%M", LocalDateTime.parse("2016-03-14T10:47") ) shouldBe "Mon, Mar 14, 16 at 10:47"
+		Strftime.format( "%c", OffsetDateTime.parse("2018-05-09T13:09:49.721-04:00") ) shouldBe "Wednesday, May 9, 2018 1:09:49 PM"
+    Strftime.format( "%a, %d %b %Y %T %z", OffsetDateTime.parse("2018-05-09T13:09:49.721-04:00") ) shouldBe "Wed, 09 May 2018 13:09:49 -0400"
 	}
 	
 }
