@@ -57,7 +57,16 @@ object Strftime {
               case 'y' => builder.appendValueReduced( YEAR, 2, 2, 2000 )
               case 'Y' => builder.appendText( YEAR )
               case 'z' => builder.appendOffset( "+HHMM", "+0000" )
+              case ':' =>
+                if (it.hasNext)
+                  it.next match {
+                    case 'z' => builder.appendOffset( "+HH:MM", "Z" )
+                    case c => sys.error( s"expected 'z', found '$c'" )
+                  }
+                else
+                  sys.error( "unexpected end of format string" )
               case 'Z' => builder.appendZoneText( SHORT )
+              case c => sys.error( s"unknown conversion: '$c'" )
             }
 
           case c => builder.appendLiteral( c )
